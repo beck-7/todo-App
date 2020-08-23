@@ -1,0 +1,56 @@
+@import "~materialize-css/dist/css/materialize.min.css";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: whitesmoke;
+}
+
+button {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.todo {
+  margin-bottom: 1rem;
+}
+
+.todo .completed {
+  text-decoration: line-through;
+}
+
+.todo label {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  background-color: mintcream;
+  padding: 1rem;
+}
+
+[type="checkbox"] + span:not(.lever) {
+  height: auto;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  margin-right: 1rem;
+}
+
+.todo-counter {
+  font-size: 18px;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+@media screen and (max-width: 359px) {
+  .todo-counter {
+    display: block;
+    margin-top: 10px;
+    margin-left: 0;
+  }
+}
