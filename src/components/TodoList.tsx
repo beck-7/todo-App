@@ -3,7 +3,7 @@ import React, { useContext } from 'react';
 import { TodoItem } from './TodoItem';
 import { TodoContext } from '../context';
 
-export const TodoList:React.FC = () => {
+export const TodoList = () => {
   const { todos } = useContext(TodoContext);
   return (
     <div className='container'>

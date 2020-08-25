@@ -1,7 +1,3 @@
-import { Actions, ITodo } from '../types';
-
-export type State = ITodo[];
-
 export const reducer = (state:State, action:Actions) => {
     switch (action.type) {
       case 'add': {

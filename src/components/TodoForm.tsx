@@ -1,11 +1,12 @@
 import React, { useState, useContext } from 'react';
+
 import { TodoContext } from '../context';
 
 type changeEvent = React.ChangeEvent<HTMLInputElement>;
 type formEvent = React.FormEvent<HTMLFormElement>
 
-export const TodoForm: React.FC  = () => {
-    const [content, setContent] = useState<string>('');
+export const TodoForm  = () => {
+    const [content, setContent] = useState('');
     const { todos, addTodo, clearTodos } = useContext(TodoContext);
 
     const changeHandler = (e:changeEvent) => {

@@ -1,15 +1,14 @@
 import React, { useContext } from 'react';
 
 import { TodoContext } from '../context';
-import { ITodo } from '../types'
 
-import classNames from 'classnames';
+import clsx from 'clsx';
 
 type ItemProps = {
-  todo: ITodo
+  todo: Todo
 }
 
-export const TodoItem: React.FC<ItemProps> = ({todo}) => {
+export const TodoItem = ({todo}:ItemProps) => {
   const { removeTodo, toggleTodo } = useContext(TodoContext);
 
   const clickHandler = () => {
@@ -20,7 +19,7 @@ export const TodoItem: React.FC<ItemProps> = ({todo}) => {
     removeTodo(todo.id);
   };
 
-  const spanClass = classNames('black-text', { completed: todo.completed });
+  const spanClass = clsx('black-text', { completed: todo.completed });
 
   return (
     <div className='todo'>

@@ -1,8 +1,6 @@
 import React, { useReducer, useEffect, createContext } from 'react';
 
 import { reducer } from '../reducer';
-import { IContextProps } from '../types';
-import { Method } from '../types'
 
 import { nanoid } from 'nanoid';
 
@@ -10,7 +8,17 @@ type StateProps = {
   children: React.ReactNode
 }
 
-export const TodoContext = createContext({} as IContextProps);
+interface ContextProps  {
+  state: State;
+  dispatch: React.Dispatch<Actions>;
+  todos: Todo[];
+  addTodo: (text:string) => void;
+  toggleTodo: (id:string) => void;
+  removeTodo: (id:string) => void;
+  clearTodos: () => void;
+}
+
+export const TodoContext = createContext({} as ContextProps);
 
 export const ContextProvider = ({children}:StateProps) => {
   const [state, dispatch] = useReducer(
@@ -25,7 +33,7 @@ export const ContextProvider = ({children}:StateProps) => {
   const addTodo = (title:string) => {
     if (title.trim()) {
       dispatch({
-        type: Method.add,
+        type: 'add',
         id: nanoid(),
         title
       });
@@ -34,21 +42,21 @@ export const ContextProvider = ({children}:StateProps) => {
 
   const toggleTodo = (id:string) => {
     dispatch({
-      type: Method.toggle,
+      type: 'toggle',
       id
     });
   };
 
   const removeTodo = (id:string) => {
     dispatch({
-      type: Method.remove,
+      type: 'remove',
       id
     });
   };
 
   const clearTodos = () =>
     dispatch({
-      type: Method.clear,
+      type: 'clear',
     });
 
   const value = {
