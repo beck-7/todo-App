@@ -4,7 +4,7 @@ import { reducer } from '../reducer';
 
 import { nanoid } from 'nanoid';
 
-type StateProps = {
+interface StateProps {
   children: React.ReactNode
 }
 

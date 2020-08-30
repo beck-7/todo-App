@@ -1,18 +1,18 @@
-declare type TodoActionTypes = 
+type TodoActionTypes = 
        | IAdd
        | IRemove
        | IToggle
        | IClear;
        
-declare type Actions = TodoActionTypes;
+type Actions = TodoActionTypes;
 
-declare type Todo = {  
+type Todo = {  
     id: string;
     title: string;
     completed: boolean;
 }
 
-declare type State = Todo[];
+type State = Todo[];
 
 interface IAdd {
     type: 'add';

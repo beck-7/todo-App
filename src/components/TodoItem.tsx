@@ -4,7 +4,7 @@ import { TodoContext } from '../context';
 
 import clsx from 'clsx';
 
-type ItemProps = {
+interface ItemProps {
   todo: Todo
 }
 
