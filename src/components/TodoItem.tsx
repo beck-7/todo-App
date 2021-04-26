@@ -1,39 +1,35 @@
-import React, { useContext } from 'react';
+import React, { useContext } from 'react'
 
-import { TodoContext } from '../context';
+import { TodoContext } from '../context'
 
-import clsx from 'clsx';
+import clsx from 'clsx'
 
 interface ItemProps {
   todo: Todo
 }
 
-export const TodoItem = ({todo}:ItemProps) => {
-  const { removeTodo, toggleTodo } = useContext(TodoContext);
+export const TodoItem = ({ todo }: ItemProps) => {
+  const { removeTodo, toggleTodo } = useContext(TodoContext)
 
   const clickHandler = () => {
-    toggleTodo(todo.id);
-  };
+    toggleTodo(todo.id)
+  }
 
   const removeHandler = () => {
-    removeTodo(todo.id);
-  };
+    removeTodo(todo.id)
+  }
 
-  const spanClass = clsx('black-text', { completed: todo.completed });
+  const spanClass = clsx('black-text', { completed: todo.completed })
 
   return (
-    <div className='todo'>
-    <label>
-      <input
-        type='checkbox'
-        checked={todo.completed}
-        onChange={clickHandler}
-      />
-      <span className={spanClass}>{todo.title}</span>
-      <button type='button' onClick={removeHandler}>
-        <i className='material-icons red-text'>delete</i>
-      </button>
-    </label>
-  </div>
-  );
-};
+    <div className="todo">
+      <label>
+        <input type="checkbox" checked={todo.completed} onChange={clickHandler} />
+        <span className={spanClass}>{todo.title}</span>
+        <button type="button" onClick={removeHandler}>
+          <i className="material-icons red-text">delete</i>
+        </button>
+      </label>
+    </div>
+  )
+}

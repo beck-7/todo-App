@@ -1,13 +1,13 @@
-import React, { useContext } from 'react';
+import React, { useContext } from 'react'
 
-import { TodoItem } from './TodoItem';
-import { TodoContext } from '../context';
+import { TodoItem } from './TodoItem'
+import { TodoContext } from '../context'
 
 export const TodoList = () => {
-  const { todos } = useContext(TodoContext);
-  
+  const { todos } = useContext(TodoContext)
+
   return (
-    <div className='container'>
+    <div className="container">
       <ul>
         {todos.map((todo) => (
           <li key={todo.id}>
@@ -16,5 +16,5 @@ export const TodoList = () => {
         ))}
       </ul>
     </div>
-  );
-};
+  )
+}

@@ -1,35 +1,31 @@
-type TodoActionTypes = 
-       | IAdd
-       | IRemove
-       | IToggle
-       | IClear;
-       
-type Actions = TodoActionTypes;
+type TodoActionTypes = IAdd | IRemove | IToggle | IClear
 
-type Todo = {  
-    id: string;
-    title: string;
-    completed: boolean;
+type Actions = TodoActionTypes
+
+type Todo = {
+  id: string
+  title: string
+  completed: boolean
 }
 
-type State = Todo[];
+type State = Todo[]
 
 interface IAdd {
-    type: 'add';
-    title: string;
-    id: string;
+  type: 'add'
+  title: string
+  id: string
 }
 
 interface IToggle {
-    type: 'toggle';
-    id: string;
+  type: 'toggle'
+  id: string
 }
-  
+
 interface IRemove {
-    type: 'remove';
-    id: string;
+  type: 'remove'
+  id: string
 }
-  
+
 interface IClear {
-    type: 'clear';
+  type: 'clear'
 }
